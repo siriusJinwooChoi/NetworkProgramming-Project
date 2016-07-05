@@ -1,0 +1,46 @@
+@CHARSET "EUC-KR";
+@charset "utf-8";
+
+	.temperObject {	
+		position:absolute;
+		top:200px;
+		left:120px;
+		margin:0px;
+		width:1100px;
+		height:30px;
+		padding:5px;
+		background:#99CC33;
+		font-size:20px;
+		font-family:Arial, Sans-serif;
+		font-weight: bold;
+		color:#FFF; 
+		text-align:center;
+		border-top-left-radius: 10px 10px;
+		border-top-right-radius: 10px 10px;
+		border-bottom-left-radius: 10px 10px;
+		border-bottom-right-radius: 10px 10px;
+		display:inline-block;
+		cursor:pointer;
+	}
+	
+	.tempHeadnav {
+		position:absolute;
+		top:250px;
+		width:1330px;
+		height:600px;
+		background: #FFF;
+		font: 10px bold;
+		border:0px solid #bdd;
+		color:#666;
+		text-decoration:none;
+		display:none;
+	}
+	
+	.tempmainnav{
+		padding:10px 0px;
+		text-align:center;
+		font: 30px bold;
+		color:#666;
+		border:1px solid #bdd;
+		cursor:pointer;
+	}

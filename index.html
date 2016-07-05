@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+ 	<meta charset="utf-8">
+ 	<link href="style.css" rel="stylesheet" type="text/css">
+ 	<link href="realtemp.css" rel="stylesheet" type="text/css">
+	
+	<!-- 기본 스케일 변경을 막기 위한 부분 -->
+	<meta name ="viewport" content="width=device-width; initial-scal1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script>
+		var value;
+	</script>
+	<title>Network Programming Project</title>	
+	
+</head>
+<body bgcolor = "#339933">
+	<header id = mainPage>		
+		<div>
+			<div class="mainText" style ="font-size: 45px; position:relative; top:30px;">Network Programming Project</div>
+			<div class="mainText" style ="font-size: 25px; position:relative; top:50px;">Arduino를 이용한 영유아의 돌연사 방지</div>
+		</div>
+		
+		<nav class="topMenu">
+    		<ul>
+        		<li class="topMenuLi">
+        		    <a class="menuLink" href="http://www.hufs.ac.kr">TTC팀</a>
+        		    <ul class="submenu">
+        		        <li><a class="submenuLink longLink">팀장 : 이인섭</a></li>
+        		        <li><a class="submenuLink longLink">팀원 : 이병주</a></li>
+        		        <li><a class="submenuLink longLink">팀원 : 최진우</a></li>
+        		    </ul>
+        		</li>
+    		</ul>
+   		</nav>
+   		
+   		<div class = "temperObject tempClick">
+			<a>시간별 온도 데이터</a>
+		</div>
+   		
+   		<script>
+   		$(function(){
+			$(".tempClick").click(function() {
+				$(".tempHeadnav").slideToggle("show");
+			});	
+   		});
+		</script>
+   		
+		<div class="tempHeadnav">
+			<div class="tempmainnav">실시간 온도측정</div>
+				<div class = "Text" style = "position:absolute; left:100px;">
+					<p>시간</p>
+					<?php
+						$connect = mysql_connect('127.0.0.1', 'root', 'apmsetup')
+							or die('Error connecting to MySQL server');
+						mysql_select_db("test");
+
+						$query_showAll = "SELECT enter_time FROM information";
+						$result_showAll = mysql_query($query_showAll);
+						while($row = mysql_fetch_array($result_showAll)) {
+							$date = $row['enter_time'];
+						echo $date . "<br>";
+						}
+						mysql_close($connect);
+					?>
+				</div>
+				<div class="Text" style = "position:absolute; left:600px;">
+					<p>온도</p>
+					<?php
+						$connect = mysql_connect('127.0.0.1', 'root', 'apmsetup')
+							or die('Error connecting to MySQL server');
+						mysql_select_db("test");
+
+						$query_showAll = "SELECT temperature FROM information";
+						$result_showAll = mysql_query($query_showAll);
+						while($row = mysql_fetch_array($result_showAll)) {
+							$temperature = $row['temperature'];
+						echo $temperature . "<br>";
+						}
+						mysql_close($connect);
+					?>
+				</div>
+				<div class="Text" style = "position:absolute; left:900px;">
+					<p>위험</p>
+					<?php
+						$connect = mysql_connect('127.0.0.1', 'root', 'apmsetup')
+							or die('Error connecting to MySQL server');
+						mysql_select_db("test");
+
+						$query_showAll = "SELECT confirm FROM information";
+						$result_showAll = mysql_query($query_showAll);
+						while($row = mysql_fetch_array($result_showAll)) {
+								$confirm = $row['confirm'];
+							echo $confirm . "<br>";
+						}
+						mysql_close($connect);
+					?>
+				</div>
+		</div>
+	</header>
+</body>
+</html>
