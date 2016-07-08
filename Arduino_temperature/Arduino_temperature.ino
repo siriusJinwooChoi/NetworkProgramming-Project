@@ -80,7 +80,7 @@ void loop()
          client.print("&confirm=");
          client.print(confirm);
          client.println(" HTTP/1.1");
-         client.println("Host: 220.67.124.22");
+         client.println("Host: xxx.xxx.xxx.xxx");   //Your Server IP Address
          client.println("Connection: close");
          client.println();
          Serial.print("degree :");
@@ -96,7 +96,7 @@ void loop()
          client.print("&confirm=");
          client.print(confirm);
          client.println(" HTTP/1.1");
-         client.println("Host: 220.67.124.22");
+         client.println("Host: xxx.xxx.xxx.xxx");   //Your Server IP Address
          client.println("Connection: close");
          client.println();
          Serial.print("degree :");
@@ -112,7 +112,7 @@ void loop()
          client.print("&confirm=");
          client.print(confirm);
          client.println(" HTTP/1.1");
-         client.println("Host: 220.67.124.22");
+         client.println("Host: xxx.xxx.xxx.xxx");   //Your Server IP Address
          client.println("Connection: close");
          client.println();
          Serial.print("degree :");
@@ -134,7 +134,6 @@ void loop()
       char c = client.read();
       Serial.print(c);
     }
-  
     //Serial.println("disconnecting");
     client.stop();
     connected = false;
