@@ -2,11 +2,11 @@
 #include <SPI.h>
 #include <WiFi.h>
 
-char ssid[] = "ICE409";     //your network SSID (name) 
-char pass[] = "409ice409"; //your network password
+char ssid[] = "YOUR NETWORK SSID";     //your network SSID (name) 
+char pass[] = "YOUR NETWORK PASSWORD"; //your network password
 
 int status = WL_IDLE_STATUS;
-IPAddress server(220,67,124,22);
+IPAddress server(xxx,xxx,xxx,xxx);    //your Server IP address
 WiFiClient client;
 
 bool connected = false;
